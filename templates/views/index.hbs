@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{>head}}
+</head>
+
+<body>
+
+    <!-- heading -->
+    {{>header}}
+    {{>alert_response}}
+
+    <!-- slide show -->
+    <header>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./imgs/v1.png" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Discover the joy of open roads with DriveOnRent</h5>
+                        <p>your ultimate car rental solution, offering a diverse range of vehicles to cater to all your
+                            travel needs</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./imgs/v2.png" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Embrace wanderlust with our top-quality rental vehicles</h5>
+                        <p>Our top-quality rental vehicles are carefully selected to cater to your adventurous spirit,
+                            ensuring you can fully embrace wanderlust and enjoy seamless and exciting travel
+                            experiences.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./imgs/v27.png" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Find your perfect ride at DriveOnRent</h5>
+                        <p>with an extensive selection from sleek compacts to luxurious SUVs, ensuring exceptional and
+                            personalized travel.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- about us -->
+    <section class="main_heading my-5" id="about">
+        <div class="text-center">
+            <h3 class="display-5">About</h3>
+            <hr class="w-25 mx-auto">
+        </div>
+
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <figure>
+                        <img src="imgs/v3.jpg" class="img-fluid about_img" alt="about image">
+                    </figure>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-12">
+
+                    <p>Welcome to DriveOnRent! We are dedicated to making vehicle rentals easy and enjoyable. With
+                        our wide selection of top-quality vehicles, booking becomes a breeze on our user-friendly
+                        website. Transparent pricing and dedicated customer service are our cornerstones. Your
+                        safety is our priority, and we are passionate about empowering travelers to embrace the freedom
+                        of the open road. Join us on this exciting journey - DriveOnRent, where every adventure
+                        begins!</p>
+                    <p>If you have any questions or need assistance, please feel free to contact us by filling up the
+                        form below. We'll be more than happy to help you with any queries or concerns you may have. 📝
+                    </p>
+                    <button type="button" class="btn btn-outline-primary">Check More</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- services -->
+    <section class="main_heading my-5 bg-light py-3" id="services">
+        <div class="text-center">
+            <h1 class="display-5"> Services </h1>
+            <hr class="w-25 mx-auto">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-10 mx-auto">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="imgs/v12.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Weekend Getaways</h5>
+                                    <p class="card-text">Create enticing packages for weekend getaways, allowing
+                                        customers to rent cars for short trips and vacations.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-10 mx-auto">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="imgs/v18.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Self-Drive Adventure Tours</h5>
+                                    <p class="card-text">Appeal to adventure by offering self-drive tour
+                                        packages to exciting destinations.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-10 mx-auto">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="imgs/v16.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Long-Term Leasing</h5>
+                                    <p class="card-text">Offer long-term leasing options for customers who need a
+                                        vehicle for an extended period, such as a few months or even years.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-12 text-center my-5">
+                    <a href="user/item-list"><button type="button" class="btn btn-outline-primary">Products</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact us -->
+    <section class="main_heading my-5 pt-5" id="contact">
+        <div class="text-center">
+            <h1 class="display-5">Get in Touch</h1>
+            <hr class="w-25 mx-auto">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-10 col-md-8 mx-auto">
+                    <form method="post" action="/user/feedback">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" name="description"
+                                placeholder="enter description here..." rows="5"></textarea>
+                        </div>
+                        <input type="hidden" name="Renderpage" value="index">
+                        <input class="btn btn-success btn-block form-control" type="submit" name="btn_feedback"
+                            value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+
+</html>

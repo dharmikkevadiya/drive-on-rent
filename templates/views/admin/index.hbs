@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ADMIN DASHOBOARD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{>head2}}
+</head>
+
+<body>
+
+  {{>admin_header}}
+  {{>alert_response}}
+  {{>add_item}}
+
+  <div class="container mt-3">
+    <h2>Dashboard</h2>
+    <br>
+
+    <!-- Nav pills -->
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="pill" href="#home">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu1">Feedbacks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu2">Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu3">Orders</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      {{!-- home --}}
+      <div class="tab-pane container active" id="home">
+        <!-- USERS -->
+        <div class="container mt-3 table-responsive">
+          <h2>USER LIST</h2>
+          <p>Total users : {{result.users.length}}</p>
+          <table class="table table-striped table-primary table-hover">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>phone no</th>
+                <th>gender</th>
+                <th>country</th>
+                <th>address</th>
+                <th>date</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each result.users}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{phone_no}}</td>
+                <td>{{gender}}</td>
+                <td>{{country}}</td>
+                <td>{{address}}</td>
+                <td>{{date}}</td>
+                <td><a href="/admin/remove-user/{{_id}}">Delete</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{!-- feedbacks --}}
+      <div class="tab-pane container fade" id="menu1">
+        <h4>USER FEEDBACKS</h4>
+        <p>Total feedbacks : {{result.feedbacks.length}}</p>
+        <div class="container mt-3 table-responsive">
+
+          <table class="table table-striped table-primary table-hover">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>description</th>
+                <th>date</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each result.feedbacks}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{description}}</td>
+                <td>{{date}}</td>
+                <td><a href="/admin/remove-feedback/{{_id}}">Delete</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{!-- items --}}
+      <div class="tab-pane container fade" id="menu2">
+        <h4>Items</h4>
+        <p>Total Items : {{result.items.length}}</p>
+        <div class="container mt-3 table-responsive">
+
+          <table class="table table-striped table-primary table-hover">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>description</th>
+                <th>imgs</th>
+                <th>date</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each result.items}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{quantity}}</td>
+                <td>{{description}}</td>
+                <td> {{#each imgs}} <img src={{url}} width="50" class="rounded mb-2 img-thumbnail"> {{/each}} </td>
+                <td>{{date}}</td>
+                <td><a href="/admin/remove-item/{{_id}}">Delete</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{!-- orders --}}
+      <div class="tab-pane container fade" id="menu3">
+        <h4>Orders</h4>
+        <p>Total Orders : {{result.orders.orders.length}}</p>
+        <div class="container mt-3 table-responsive">
+
+          <table class="table table-striped table-primary table-hover">
+            <thead>
+              <tr>
+                <th>Order Id</th>
+                <th>Item Id</th>
+                <th>customer Id</th>
+                <th>customer name</th>
+                <th>customer email</th>
+                <th>customer address</th>
+                <th>imgs</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>order date</th>
+                <th>order status</th>
+                <th>Order</th>
+                <th>Order</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each result.orders}}
+              {{#each orders}}
+              <tr>
+                <td>{{_id}}</td>
+                <td>{{item._id}}</td>
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.address}}</td>
+                <td> {{#each item.imgs}} <img src={{url}} width="50" class="rounded mb-2 img-thumbnail"> {{/each}} </td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{date}}</td>
+                <td>{{status}}</td>
+                <td><a href="/admin/cancel-order/{{_id}}">cancel</a></td>
+                <td><a href="/admin/accept-order/{{_id}}">accept</a></td>
+              </tr>
+              {{/each}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

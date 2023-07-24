@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>head}}
+
+</head>
+
+<body>
+    {{>header}}
+    {{>alert_response}}
+
+    <!-- products -->
+    <section class="main_heading my-5 py-3 container-fluid" id="products">
+        <div class="text-center">
+            <h1 class="display-6"> Products </h1>
+            <hr class="w-25 mx-auto">
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-6 g-4">
+            {{#each result}}
+
+            <div class="col">
+                <div class="card h-100 text-center">
+                    {{#each imgs}}
+                    {{#if @first}}
+                    <img src={{url}} class="card-img-top img-fluid" alt="...">
+                    {{/if}}
+                    {{/each}}
+                    <div class="card-body">
+                        <p class="card-title">{{name}}</p>
+                        <hr>
+                        <div class="card-text">
+                            <b>Price:</b> {{price}} <br>
+                            <b>Quantity:</b> {{quantity}}
+                            <p><b>Description:</b> {{description}}</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted mx-auto">
+                        <a href="/user/book-item/{{_id}}" class="btn btn-sm btn-outline-primary">Book now</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+
+        </div>
+    </section>
+
+
+
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{>head2}}
+    <style>
+        .login {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            font-family: arial;
+            margin: 2.5rem;
+            width: 25rem;
+            height: 18em;
+            outline: 1px solid black;
+        }
+
+        input,
+        select,
+        textarea {
+            max-width: 40rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>admin_header}}
+    {{>alert_response}}
+
+    <div class="login">
+        <div class="container mt-5">
+            <h3 style="text-align: center;" class="mb-2 mt-3">Admin Login</h3>
+            <form method="post" action="/admin/login">
+                <!--Email-->
+                <div class="form-group">
+                    <label for="name">Email: </label>
+                    <input type="email" class="form-control" placeholder="email" name="email" required />
+                </div>
+
+                <!--Password-->
+                <div class="form-group">
+                    <label for="name">Password: </label>
+                    <input type="text" class="form-control" placeholder="password" name="password" required />
+                </div>
+
+                <!--Render page-->
+                <input type="hidden" name="Renderpage" value="admin/login">
+
+                <!--Login-->
+                <input type="submit" class="btn btn-success btn-block mt-3" value="Login" name="btn_login" />
+            </form>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {{>head}}
+</head>
+
+<body>
+
+  {{>header}}
+  {{>alert_response}}
+
+  <div class="content">
+    <div class="container mt-5">
+      <h3 style="text-align: center;" class="mb-2 mt-3">Welcome , please log in!</h3>
+      <form method="post" action="/user/login">
+        <!--Email-->
+        <div class="form-group mb-3">
+          <label for="name">Email: </label>
+          <input type="email" class="form-control" placeholder="email" name="email" required />
+        </div>
+
+        <!--Password-->
+        <div class="form-group mb-3">
+          <label for="name">Password: </label>
+          <input type="text" class="form-control" placeholder="password" name="password" required />
+        </div>
+
+        <!--Render page-->
+        <input type="hidden" name="Renderpage" value="login">
+
+        <!-- Signup && Forgot Password-->
+        <div><a href="/user/signup">Don't have an Account.? Signup</a></div>
+        <div><a href="/user/forgot-password">Forgot password.? click here </a></div>
+
+        <!--Login-->
+        <input type="submit" class="btn btn-success btn-block mt-3" value="Login" name="btn_login" />
+      </form>
+    </div>
+  </div>
+
+
+
+  {{>footer}}
+
+</body>
+
+</html>

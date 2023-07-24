@@ -1,0 +1,59 @@
+<!-- Modal -->
+<div class="modal fade" id="addItem" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addItemModalLabel">Add Item</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form method="post" enctype='multipart/form-data' action="/admin/add-item/">
+
+            <!--item name-->
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <!--item price-->
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="text" class="form-control" id="price" name="price" required>
+            </div>
+
+            <!--images-->
+            <div class="form-group mb-3">
+              <label for="imgs">Images </label>
+              <input type="file" class="form-control" id="imgs" name="imgs" accept="image/*" multiple required>
+            </div>
+
+            <!--Description-->
+            <div class="form-group mb-3">
+              <label for="address">description: </label>
+              <textarea name="description" id="description" maxlength="100000"
+                placeholder="enter description of post here.." rows="5" class="form-control" required></textarea>
+            </div>
+
+            <!--Render Page-->
+            <input type="hidden" name="Renderpage" value="index">
+
+            <!--Upload-->
+            <input type="submit" class="btn btn-success btn-block mb-5" value="add item" name="btn_add_item" />
+          </form>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal-footer">
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>head}}
+
+</head>
+
+<body>
+    {{>header}}
+    {{>alert_response}}
+
+    <!-- contact us -->
+    <section class="main_heading my-5 pt-5" id="contact">
+        <div class="text-center">
+            <h1 class="display-6"> Sign up </h1>
+            <hr class="w-25 mx-auto">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-10 col-md-8 mx-auto">
+                    <form name="myForm" method="post" action="/user/signup" onsubmit="return validateForm()">
+
+                        <!--Name-->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+
+                        <!--Email-->
+                        <div class="form-group">
+                            <label for="email">Email: </label>
+                            <input type="text" class="form-control" placeholder="email" name="email" id="email" />
+                        </div>
+
+                        <!--Phone no-->
+                        <div class="mb-3">
+                            <label for="phone_no" class="form-label">Phone no:</label>
+                            <input type="text" class="form-control" id="phone_no" name="phone_no">
+                        </div>
+
+                        <!--Gender-->
+                        <div class="mb-3 form-group">
+                            <label>Gender :</label>
+
+                            <div class="form-group form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" value="male"
+                                        checked />Male
+                                </label>
+                            </div>
+
+                            <div class="form-group form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" value="female">Female
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <!--Country-->
+                        <div class="form-group mb-3">
+                            <label for="country">Country: </label>
+                            <select class="form-control" name="country" id="country">
+                                <option value="india">India</option>
+                                <option value="australia">Australia</option>
+                                <option value="japan">Japan</option>
+                                <option value="canada">Canada</option>
+                                <option value="russia">Russia</option>
+                                <option value="new zealand">New Zealand</option>
+                                <option value="usa">USA</option>
+                                <option value="germany">Germany</option>
+                                <option value="france">France</option>
+                            </select>
+                        </div>
+
+                        <!--Address-->
+                        <div class="form-group mb-3 ">
+                            <label for="address">Address: </label>
+                            <textarea name="address" id="address" placeholder="enter address here.." maxlength="200"
+                                rows="5" class="form-control"></textarea>
+                        </div>
+
+                        <!--Password-->
+                        <div class="form-group mb-3 ">
+                            <label for="password">Password: </label>
+                            <input type="password" class="form-control" placeholder="password" name="password"
+                                id="password" />
+                        </div>
+
+                        <div><a href="/user/login">Already have an Account.? Login</a></div>
+
+                        <input type="submit" class="btn btn-success btn-block mb-5" value="signup" name="btn_signup" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+
+</html>

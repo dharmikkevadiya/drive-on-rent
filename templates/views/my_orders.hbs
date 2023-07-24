@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{>head}}
+
+</head>
+
+<body>
+  {{>header}}
+  {{>alert_response}}
+
+
+
+  <div class="container mt-3">
+    <div class="text-center">
+      <h1 class="display-6"> My Orders </h1>
+      <hr class="w-25 mx-auto">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>name</th>
+            <th>imgs</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>order date</th>
+            <th>order status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each result.orders}}
+          <tr class="table-info">
+            <td>{{_id}}</td>
+            <td>{{item.name}}</td>
+            <td> {{#each item.imgs}} <img src={{url}} width="50" class="rounded mb-2 img-thumbnail"> {{/each}} </td>
+
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{date}}</td>
+            <td>{{status}}</td>
+
+          </tr>
+          {{/each}}
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  {{>footer}}
+</body>
+
+</html>

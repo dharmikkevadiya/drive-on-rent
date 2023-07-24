@@ -4,6 +4,18 @@
   box-sizing: border-box;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #efefef;
+  color: #333;
+}
+
 .a-link {
   text-decoration: none;
   color: #fff;

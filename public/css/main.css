@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-family: Helvetica, 'Trebuchet MS', Verdana, sans-serif;
 }
 
 html {
@@ -20,10 +20,6 @@ body {
   text-decoration: none;
   color: #fff;
   transition: all 0.3s;
-}
-.carousel-item img {
-  width: 100%;
-  height: 80vh;
 }
 
 .about_img {
@@ -52,16 +48,82 @@ footer {
 ul.list-group:after {
   clear: both;
   display: block;
-  content: "";
+  content: '';
 }
 
 a {
   display: block;
   padding: 5px;
 }
+.card {
+  border: 2px solid #ccc;
+}
 
 .card-img-top {
   width: 100%;
-  height: 30vh;
-  object-fit: cover;
+  height: 150px;
+  object-fit: contain;
+  /* background: #ccc; */
+}
+
+/* header */
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 50px 50px 0 50px;
+  width: 100%;
+  height: 550px;
+}
+
+.right-side {
+  flex: 1;
+  text-align: left;
+}
+
+.right-side h1 {
+  color: #3e61b5;
+  font-weight: bold;
+}
+.right-side h1 span {
+  color: #ef3e38;
+}
+
+.price-btn {
+  background: #ef3e38;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+.price-btn:hover {
+  background: rgb(255, 0, 0);
+}
+
+.right-side p {
+  line-height: 1.8;
+  color: gray; /* Adjust text color */
+}
+
+.left-side {
+  flex: 1;
+  text-align: right;
+}
+
+.left-side img {
+  width: 100%;
+}
+
+.main_heading {
+  padding: 50px 0;
+}
+
+/* navbar */
+.navbar {
+  background: #3e61b5;
+  color: #fff !important;
+}
+.default-btn {
+  background: #3e61b5;
+  color: #fff;
 }

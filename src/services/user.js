@@ -1,11 +1,11 @@
-const MongooseService = require("./mongoose");
-const userCollection = require("../models/users");
-const feedbackCollection = require("../models/feedbacks");
-const bcrypt = require("bcryptjs");
-const { getRandomValue, sendEmailOtp } = require("../helper/general");
-const { errorResponse, successResponse } = require("../helper/response");
-const { StatusCodes } = require("http-status-codes");
-const MSG = require("../helper/constant");
+const MongooseService = require('./mongoose');
+const userCollection = require('../models/users');
+const feedbackCollection = require('../models/feedbacks');
+const bcrypt = require('bcryptjs');
+const { getRandomValue, sendEmailOtp } = require('../helper/general');
+const { errorResponse, successResponse } = require('../helper/response');
+const { StatusCodes } = require('http-status-codes');
+const MSG = require('../helper/constant');
 
 class UserService {
   constructor() {
@@ -83,10 +83,10 @@ class UserService {
   async forgotPassword(body) {
     try {
       let { email } = body;
-      let userData = await this.service.getOneByField({ email }, "email: 1");
+      let userData = await this.service.getOneByField({ email }, 'email: 1');
 
       if (userData) {
-        let pass = "lorem" + getRandomValue(4, "123456789");
+        let pass = 'lorem' + getRandomValue(4, '123456789');
 
         const htmlContent = `<p>Hello,</p>
           <p>Your new password is: <strong>${pass}</strong></p>

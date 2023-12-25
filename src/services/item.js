@@ -1,12 +1,12 @@
-const MongooseService = require("./mongoose");
-const adminCollection = require("../models/admin");
-const userCollection = require("../models/users");
-const feedbackCollection = require("../models/feedbacks");
-const itemCollection = require("../models/item");
+const MongooseService = require('./mongoose');
+const adminCollection = require('../models/admin');
+const userCollection = require('../models/users');
+const feedbackCollection = require('../models/feedbacks');
+const itemCollection = require('../models/item');
 
-const { errorResponse, successResponse } = require("../helper/response");
-const { StatusCodes } = require("http-status-codes");
-const MSG = require("../helper/constant");
+const { errorResponse, successResponse } = require('../helper/response');
+const { StatusCodes } = require('http-status-codes');
+const MSG = require('../helper/constant');
 
 class ItemService {
   constructor() {
@@ -17,7 +17,12 @@ class ItemService {
   async getAllItem() {
     try {
       let items = await this.itemService.getAll();
-      return successResponse(StatusCodes.OK, MSG.FOUND_SUCCESS, items, false);
+      return successResponse(
+        StatusCodes.OK,
+        'Book Now & Pay later',
+        items,
+        false
+      );
     } catch (err) {
       console.log(err);
       return errorResponse(StatusCodes.INTERNAL_SERVER_ERROR, err.message);
@@ -34,7 +39,7 @@ class ItemService {
 
       let newOrder = {
         item: itemId,
-        status: "pending",
+        status: 'pending',
         customer: {
           id: user._id,
           name: user.name,
@@ -45,7 +50,7 @@ class ItemService {
       user.orders.unshift(newOrder);
 
       await user.save();
-      return successResponse(StatusCodes.OK, "order book" + MSG.SUCCESSFULLY);
+      return successResponse(StatusCodes.OK, 'order book' + MSG.SUCCESSFULLY);
     } catch (err) {
       console.log(err);
       return errorResponse(StatusCodes.INTERNAL_SERVER_ERROR, err.message);
@@ -56,8 +61,8 @@ class ItemService {
     try {
       let orders = await this.service.getOneByfieldAndPopulate(
         { _id: userId },
-        "orders",
-        "orders.item"
+        'orders',
+        'orders.item'
       );
       return successResponse(StatusCodes.OK, MSG.FOUND_SUCCESS, orders, true);
     } catch (err) {

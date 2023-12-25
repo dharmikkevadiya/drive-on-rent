@@ -1,17 +1,18 @@
-const Joi = require("joi");
+const Joi = require('joi');
 
 const schemas = {
   signup: Joi.object().keys({
     name: Joi.string().required(),
     email: Joi.string().email().required(),
-    phone_no: Joi.string()
-      .regex(/^[0-9]{10}$/)
-      .messages({ "string.pattern.base": `Invalid mobile no..` })
-      .allow("", null),
-    country: Joi.string().allow("", null),
+    // phone_no: Joi.string()
+    //   .regex(/^[0-9]{10}$/)
+    //   .messages({ 'string.pattern.base': `Invalid mobile no..` })
+    //   .allow('', null),
+    phone_no: Joi.string().allow('', null),
+    country: Joi.string().allow('', null),
     password: Joi.string().required(),
-    gender: Joi.string().allow("", null),
-    address: Joi.string().allow("", null),
+    gender: Joi.string().allow('', null),
+    address: Joi.string().allow('', null),
     btn_signup: Joi.string(),
     Renderpage: Joi.string(),
   }),
